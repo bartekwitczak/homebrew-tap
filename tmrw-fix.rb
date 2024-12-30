@@ -14,7 +14,8 @@ class TmrwFix < Formula
   end
 
   def install
-    bin.install "tmrw-fix"
+    binary_name = Hardware::CPU.arm? ? "tmrw-fix-darwin-arm64" : "tmrw-fix-darwin-amd64"
+    bin.install binary_name => "tmrw-fix"
   end
 
   test do
